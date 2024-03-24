@@ -1,10 +1,15 @@
-class Main{
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-        System.out.println("Test");
-        System.out.println("Test2");
-        System.out.println("Test3");
-        System.out.println("Test4");
+class Main {
+    public static void main(String[] args) {
+        BookShelf bookshelf = new BookShelf(4);
+        bookshelf.appendBook(new Book("Around the world in 80 Days"));
+        bookshelf.appendBook(new Book("Bible"));
+        bookshelf.appendBook(new Book("Cinderella"));
+        bookshelf.appendBook(new Book("Daddy-Long-Legs"));
+        Iterator it = bookshelf.iterator();
+        while (it.hasNext()) {
+            Book book = (Book) it.next();
+            System.out.println(book.getName());
+        }
     }
 
 }
